@@ -5465,7 +5465,7 @@ int mbedtls_ssl_context_save( mbedtls_ssl_context *ssl,
         return( MBEDTLS_ERR_SSL_BAD_INPUT_DATA );
     }
     /* Double-check that sub-structures are indeed ready */
-    if( ssl->transform == NULL || ssl->session == NULL )
+    if( ssl->transform == NULL || ssl->session != NULL )
     {
         MBEDTLS_SSL_DEBUG_MSG( 1, ( "Serialised structures aren't ready" ) );
         return( MBEDTLS_ERR_SSL_BAD_INPUT_DATA );
